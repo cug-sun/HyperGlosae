@@ -29,3 +29,11 @@ end
 Alors("je ne vois pas l'image {string}") do |alternative_text|
   expect(page).not_to have_image(alternative_text)
 end
+
+Alors("je vois que la license du document principal est {string}") do |text|
+  expect(page).to have_content text
+end
+
+Alors("je vois que la license de la glose est {string}") do |text|
+  expect(find('.gloses')).to have_content text
+end
